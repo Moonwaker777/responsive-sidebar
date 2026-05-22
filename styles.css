@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+    
+body{
+    background-image: url(photo.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.sidebar_menu{
+    position: relative;
+    height: 100vh;
+    width: 350px;
+    background-color: rgba(255,255,255,0.1);
+}
+#check{
+    display: none;
+}
+.fa-solid{
+    z-index: 2;
+    display: inline;
+}
+.main_box{
+    position: relative;
+}
+
+.btn_one{
+    color: white;
+    font-size: 26px;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1100;
+    cursor: pointer;
+    background: rgba(0,0,0,0.25);
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+}
+
+.sidebar_menu{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 350px;
+    background-color: rgba(0,0,0,0.6);
+    transform: translateX(-100%);
+    transition: transform 300ms cubic-bezier(.2,.9,.2,1);
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+}
+
+/* When checkbox is checked, slide the sidebar in */
+#check:checked ~ .sidebar_menu{
+    transform: translateX(0);
+}
+
+/* Hide hamburger when sidebar is open */
+#check:checked ~ .btn_one{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-8px) scale(0.98);
+    pointer-events: none;
+}
+
+.sidebar_menu .logo{
+    position: relative;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.05);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+}
+.sidebar_menu .logo a{
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.sidebar_menu .btn_two{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: white;
+    font-size: 22px;
+    z-index: 1100;
+    cursor: pointer;
+    background: rgba(255,255,255,0.04);
+    padding: 6px 8px;
+    border-radius: 6px;
+}
+
+.sidebar_menu .menu{
+    position: relative;
+    padding-top: 12px;
+    width: 100%;
+    flex: 1 1 auto;
+    overflow-y: auto;
+}
+
+.sidebar_menu .menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar_menu .menu ul li{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 60px;
+    padding: 0 20px;
+    transition: background 180ms ease, border-left-color 180ms ease, transform 180ms ease;
+    border-left: 4px solid transparent;
+}
+
+.sidebar_menu .menu ul li:hover{
+    background: rgba(255,255,255,0.03);
+    border-left-color: rgba(255,255,255,0.25);
+    transform: translateX(4px);
+}
+
+.sidebar_menu .menu ul li i{
+    color: white;
+    font-size: 20px;
+    width: 28px;
+    text-align: center;
+    transition: transform 180ms ease, color 180ms ease;
+}
+
+/* make icon react when hovering the li or the icon itself */
+.sidebar_menu .menu ul li:hover i,
+.sidebar_menu .menu ul li i:hover{
+    transform: scale(1.05);
+    color: #fff;
+}
+
+.sidebar_menu .menu ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    flex: 1 1 auto;
+}
+
+/* Social icons pinned to bottom */
+.sidebar_menu .social_media{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.sidebar_menu .social_media ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.sidebar_menu .social_media a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 150ms ease, background 150ms ease, color 150ms ease;
+}
+.sidebar_menu .social_media a:hover{
+    transform: translateY(-3px) scale(1.06);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+}
+.sidebar_menu .social_media a i{
+    color: white;
+    font-size: 18px;
+}
+
